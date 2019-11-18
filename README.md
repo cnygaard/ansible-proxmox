@@ -1,5 +1,5 @@
 # ansible-proxmox
-Ansible Proxmox Ceph using lae.proxmox Ansible Galaxy role
+Ansible Proxmox Ceph using lae.proxmox Ansible Galaxy role, this playbook has been tested with Debian Buster 10
 Uses Zero Tier one for Ceph node communication.
 
 ## Install Ansible galaxy roles ##
