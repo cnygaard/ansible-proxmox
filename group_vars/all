@@ -1,0 +1,22 @@
+vultr_server_name:
+ - proxmox1
+ - proxmox2
+ - proxmox3
+
+zerotier_network_id: "{{ zerotier_network_id }}"
+zerotier_accesstoken: "{{ zerotier_access_token }}"
+zerotier_register_short_hostname: true
+
+interfaces_template: interfaces.j2
+
+pve_cluster_enabled: yes
+
+# Ceph
+pve_ceph_enabled: true # Specifies wheter or not to install and configure Ceph packages. See below for an example configuration.
+pve_ceph_repository_line: "deb http://download.proxmox.com/debian/ceph-nautilus buster main" # apt-repository configuration. Will be automatically set for 5.x and 6.x (Further information: https://pve.proxmox.com/wiki/Package_Repositories)
+pve_ceph_network: '172.28.0.0/16'
+pve_ceph_osds:
+  # OSD with everything on the same device
+  - device: /dev/sdb
+
+pve_ssl_letsencrypt: false

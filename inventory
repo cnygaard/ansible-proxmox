@@ -1,0 +1,4 @@
+[pve01]
+lab-node01.local ansible_host=1.2.3.4
+lab-node02.local ansible_host=1.2.3.5
+lab-node03.local ansible_host=1.2.3.6

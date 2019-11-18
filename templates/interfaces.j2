@@ -1,0 +1,31 @@
+# {{ ansible_managed }}
+auto lo
+iface lo inet loopback
+
+allow-hotplug enp2s0f0
+iface enp2s0f0 inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+    #gateway 10.4.0.1
+    #netmask 255.255.255.0
+    #dns-nameservers 10.2.2.4 10.3.2.4
+    #dns-search local
+    bridge_ports enp1s0
+    bridge_stp off
+    bridge_fd 0
+
+
+allow-hotplug enp1s0
+iface enp1s0 inet dhcp
+iface enp1s0 inet6 auto
+
+auto enp1s0:1
+iface enp1s0:1 inet static
+    address 10.99.0.200
+    netmask 255.255.0.0
+    mtu 1450
+
+#allow-hotplug enp1s0
+#iface enp1s0 inet dhcp
+#iface enp1s0 inet6 auto
